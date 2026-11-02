@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-labelledby="t d">
+<title id="t">Angular foundation: from browser to working component</title>
+<desc id="d">The browser loads index HTML, main TS bootstraps the app, the root component includes Hello World, and the CLI controls the workflow.</desc>
+<rect width="1000" height="330" rx="24" fill="#f4f8fc"/>
+<text x="36" y="58" font-family="sans-serif" font-weight="700" font-size="26" fill="#233c59">Memory hook: Door → Bootstrap → Root → Rooms</text>
+<g font-family="sans-serif" font-weight="600" font-size="19" text-anchor="middle">
+<rect x="35" y="105" width="202" height="100" rx="16" fill="#e1efff" stroke="#246091" stroke-width="2"/>
+<text x="136" y="145" fill="#163b60">1. Browser shell</text><text x="136" y="174" fill="#163b60" font-size="16">index.html</text>
+<rect x="280" y="105" width="202" height="100" rx="16" fill="#fef0dd" stroke="#c46b21" stroke-width="2"/>
+<text x="381" y="145" fill="#6b3b13">2. Bootstrap</text><text x="381" y="174" fill="#6b3b13" font-size="16">main.ts</text>
+<rect x="525" y="105" width="202" height="100" rx="16" fill="#e1efff" stroke="#246091" stroke-width="2"/>
+<text x="626" y="145" fill="#163b60">3. Root</text><text x="626" y="174" fill="#163b60" font-size="16">AppComponent</text>
+<rect x="770" y="105" width="202" height="100" rx="16" fill="#e9f9ef" stroke="#348458" stroke-width="2"/>
+<text x="871" y="145" fill="#1e6041">4. Child room</text><text x="871" y="174" fill="#1e6041" font-size="16">Hello World</text>
+</g>
+<path d="M237 155h43m202 0h43m202 0h43" stroke="#52697e" stroke-width="3" stroke-linecap="round"/>
+<path d="m267 147 13 8-13 8m245-16 13 8-13 8m245-16 13 8-13 8" fill="none" stroke="#52697e" stroke-width="3"/>
+<text x="500" y="273" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="20" fill="#335773">Angular CLI is the toolbox: serve · build · test · generate</text>
+</svg>
+

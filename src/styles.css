@@ -1,0 +1,19 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color: #18283a;
+  background: #f5f8fc; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #174c87; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+:focus-visible { outline: 3px solid #e97524; outline-offset: 2px; }
+
+
+
+/* Child templates are style-encapsulated: shared demo cards belong in global CSS,
+   not only in their parent component's app.css. */
+.hello { padding: .8rem 1rem; border-left: 4px solid #e47824;
+  background: #fff7ed; font-weight: 650; }
+.profile { border: 1px solid #d8e3ee; padding: 1rem; border-radius: 10px;
+  background: #f8fbff; height: 100%; }
+.profile h3 { margin-top: 0; }

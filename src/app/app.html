@@ -1,0 +1,103 @@
+<header class="masthead">
+  <div class="container">
+    <p class="eyebrow">Learning by building · Modules 01 + 02</p>
+    <h1>{{ title }}</h1>
+    <p>One connected story: build a learner dashboard, then make it interactive one concept at a time.</p>
+    <nav aria-label="Module navigation">
+      <a href="#foundation">01 · Foundation</a>
+      <a href="#control-flow">02 · Templates</a>
+      <a href="#communication">02 · Communication</a>
+      <a href="#lifecycle">02 · Lifecycle</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="panel" id="foundation">
+    <p class="eyebrow">Module 01 · Angular Foundation</p>
+    <h2>Your first working component</h2>
+    <p>Memory hook: <strong>Angular is a workshop: CLI builds the workspace, a component builds the room.</strong></p>
+    <app-hello-world />
+    <p class="hint">Source: <code>src/main.ts</code> → <code>app.ts</code> → <code>hello-world.component.ts</code></p>
+  </section>
+
+  <section class="panel" id="control-flow">
+    <p class="eyebrow">Module 02 · Component templates</p>
+    <h2>Control flow, interpolation and bindings</h2>
+
+    <!-- @if creates/removes DOM content. Signals keep this state reactive. -->
+    <button id="toggle-details" type="button" (click)="toggleDetails()">
+      {{ showDetails() ? 'Hide lesson list' : 'Show lesson list' }}
+    </button>
+    @if (showDetails()) {
+      <ul data-testid="lesson-list">
+        <!-- Track a stable unique id, not an array index for changeable data. -->
+        @for (topic of topics; track topic.id) {
+          <li>{{ topic.id }}. {{ topic.title }}</li>
+        } @empty {
+          <li>No topics available.</li>
+        }
+      </ul>
+    } @else {
+      <p data-testid="list-hidden">Lesson list is hidden by @else.</p>
+    }
+
+    <label for="role">Choose a role (switch demo)</label>
+    <select id="role" [(ngModel)]="role">
+      <option value="learner">Learner</option>
+      <option value="trainer">Trainer</option>
+      <option value="guest">Guest</option>
+    </select>
+    @switch (role) {
+      @case ('trainer') { <p data-testid="role-result">Trainer: review learner submissions.</p> }
+      @case ('learner') { <p data-testid="role-result">Learner: practice your next topic.</p> }
+      @default { <p data-testid="role-result">Guest: explore the course preview.</p> }
+    }
+
+    <div class="layout-two">
+      <div>
+        <label for="learner-name">Learner name · two-way binding</label>
+        <input id="learner-name" name="learnerName" [(ngModel)]="learnerName"
+          placeholder="Enter your name" />
+        <p>Interpolation: <strong data-testid="name-output">{{ learnerName }}</strong></p>
+        <!-- [disabled] is property binding; (click) is event binding. -->
+        <button id="greet-button" type="button"
+          [disabled]="learnerName.trim().length === 0" (click)="sendGreeting()">
+          Send greeting
+        </button>
+        <p aria-live="polite">{{ greeting() }}</p>
+      </div>
+      <div>
+        <p [title]="tooltip" [class.emphasis]="clicks() > 1"
+          [style.fontWeight]="clicks() > 2 ? '700' : '400'">
+          Property, class and style binding → hover over me.
+        </p>
+        <button id="counter-button" type="button" (click)="increment()">Clicked {{ clicks() }} times</button>
+        <p>Computed signal × 2: <strong data-testid="double-count">{{ doubledClicks() }}</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="communication">
+    <p class="eyebrow">Module 02 · Component communication</p>
+    <h2>Parent → child → parent</h2>
+    <p>Memory hook: <strong>Input = parcel in; Output = receipt out; Model = two-way handoff.</strong></p>
+    <div class="layout-two">
+      <app-legacy-profile [name]="learnerName" (selected)="onProfileSelected($event)" />
+      <!-- A writable signal can be passed directly into a two-way model binding. -->
+      <app-signal-profile [name]="learnerName" (selected)="onProfileSelected($event)" [(likes)]="likes" />
+    </div>
+    <p aria-live="polite" data-testid="selected-result">{{ latestSelection() }}</p>
+  </section>
+
+  <section class="panel" id="lifecycle">
+    <p class="eyebrow">Module 02 · Lifecycle hooks</p>
+    <h2>Creation, updates and teardown</h2>
+    <button id="toggle-lifecycle" type="button" (click)="toggleLifecycle()">
+      {{ showLifecycle() ? 'Destroy demo component' : 'Create demo component' }}
+    </button>
+    @if (showLifecycle()) { <app-lifecycle-demo [name]="learnerName" /> }
+    @else { <p>The child has been destroyed; its ngOnDestroy ran.</p> }
+  </section>
+</main>
+<footer class="footer">Techlambda curriculum · Read the matching topic files under <code>docs/</code> before each lab.</footer>
+

@@ -1,0 +1,8 @@
+<article class="profile">
+  <h3>Signal-based communication</h3>
+  <p>Signal input: <strong>{{ name() }}</strong></p>
+  <p>Two-way model likes: <output data-testid="likes">{{ likes() }}</output></p>
+  <button id="signal-select" type="button" (click)="select()">Send output()</button>
+  <button id="add-like" type="button" (click)="addLike()">Increase model()</button>
+</article>
+

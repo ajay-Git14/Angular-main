@@ -1,0 +1,22 @@
+:host { display: block; }
+.masthead { background: linear-gradient(125deg, #183958, #24608c); color: white; padding: 2.8rem 1rem; }
+.container { width: min(1080px, 100%); margin: 0 auto; padding: 0 1rem; }
+.masthead h1 { font-size: clamp(1.7rem, 4vw, 2.9rem); margin: .2rem 0 .8rem; }
+.masthead nav { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+.masthead a { color: #fff; border: 1px solid #a3c3da; border-radius: 40px;
+  text-decoration: none; padding: .5rem .85rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .1em; font-size: .76rem; font-weight: 700; color: #e47824; }
+.masthead .eyebrow { color: #ffce91; }
+.panel { margin: 1.35rem 0; padding: 1.4rem; background: #fff; border: 1px solid #e1e8ef;
+  border-radius: 16px; box-shadow: 0 10px 30px #243b5310; }
+h2 { margin-top: 0; }
+.hint, .footer { color: #627185; }
+.layout-two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.4rem; margin-top: 1.3rem; }
+label { display: block; margin: 1rem 0 .4rem; font-weight: 650; }
+input, select { border: 1px solid #b2c1cf; border-radius: 7px; padding: .6rem; width: min(100%,370px); display: block; }
+button { border: 0; background: #245f91; color: #fff; border-radius: 7px; padding: .65rem .9rem; margin: .35rem .4rem .35rem 0; }
+button:hover { background: #143f66; }
+.emphasis { color: #ae5315; }
+.footer { padding: 2rem 1rem; text-align: center; }
+@media(max-width: 720px) { .layout-two { grid-template-columns: 1fr; } .panel { padding: 1rem; } }
+

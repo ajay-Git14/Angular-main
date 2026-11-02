@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="385" viewBox="0 0 1040 385" role="img" aria-labelledby="t d">
+<title id="t">Angular component data and event flow memory map</title>
+<desc id="d">Class state flows down through interpolation and property bindings, events flow up to handlers, child input is data in and output is event out, while model supports two-way flow.</desc>
+<rect width="1040" height="385" rx="24" fill="#f4f8fc"/>
+<text x="40" y="52" font-family="sans-serif" font-size="25" font-weight="700" fill="#213d60">Memory hook: Show · Set · Hear · Sync</text>
+<g font-family="sans-serif" text-anchor="middle">
+<rect x="45" y="99" width="254" height="124" rx="18" fill="#e0edfb" stroke="#2d6090" stroke-width="3"/>
+<text x="172" y="140" font-size="22" font-weight="700" fill="#244b72">Class + signals</text>
+<text x="172" y="171" font-size="18" fill="#244b72">State / handlers</text>
+<rect x="398" y="99" width="254" height="124" rx="18" fill="#fff0de" stroke="#cb7428" stroke-width="3"/>
+<text x="525" y="140" font-size="22" font-weight="700" fill="#764312">Template</text>
+<text x="525" y="171" font-size="18" fill="#764312">Show / interact</text>
+<rect x="749" y="99" width="254" height="124" rx="18" fill="#e2f6e9" stroke="#4b9764" stroke-width="3"/>
+<text x="876" y="140" font-size="22" font-weight="700" fill="#2e6541">Child component</text>
+<text x="876" y="171" font-size="18" fill="#2e6541">input / output / model</text>
+</g>
+<path d="M299 134h98m-13-9 13 9-13 9M398 183H299m13-9-13 9 13 9" fill="none" stroke="#52697e" stroke-width="3"/>
+<path d="M652 134h97m-13-9 13 9-13 9M749 183h-97m13-9-13 9 13 9" fill="none" stroke="#52697e" stroke-width="3"/>
+<g font-family="sans-serif" font-size="16" fill="#304c64" text-anchor="middle">
+<text x="348" y="118">[prop] / {{}}</text><text x="348" y="211">(event)</text>
+<text x="700" y="118">[input]</text><text x="700" y="211">(output)</text>
+</g>
+<rect x="246" y="265" width="545" height="72" rx="13" fill="#e8ebff"/>
+<text x="519" y="295" font-family="sans-serif" font-size="21" font-weight="700" text-anchor="middle" fill="#353b75">[(two-way)] + model(): both sides synchronize</text>
+<text x="519" y="321" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#353b75">Data down · Events up · Lifecycle manages creation/cleanup</text>
+</svg>
+
